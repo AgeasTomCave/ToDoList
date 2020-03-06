@@ -1,6 +1,6 @@
 import React from "react";
 
-const ToDos = ({ todos, deleteTodos }) => {
+const ToDos = ({ todos, deleteTodos, completeToDos }) => {
   const todoList = todos.length ? (
     todos.map(todo => {
       return (
@@ -13,6 +13,12 @@ const ToDos = ({ todos, deleteTodos }) => {
           >
             Delete todo
           </button>
+          <input
+            type="checkbox"
+            onClick={() => {
+              completeToDos(todo);
+            }}
+          ></input>
         </div>
       );
     })

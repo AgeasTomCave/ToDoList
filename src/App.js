@@ -7,8 +7,8 @@ import "./App.scss";
 class App extends Component {
   state = {
     todos: [
-      { id: 1, content: "Buy food" },
-      { id: 2, content: "Buy beer" }
+      { id: 'Buy food"', content: "Buy food", complete: false },
+      { id: "Buy beer", content: "Buy beer", complete: false }
     ]
   };
 
@@ -21,9 +21,15 @@ class App extends Component {
     });
   };
 
+  completeToDo = todo => {
+    todo.complete = !todo.complete;
+    this.setState({
+      todo
+    });
+  };
+
   addToDo = todo => {
     let todos = [...this.state.todos, todo];
-
     todo.id = todo.content;
     this.setState({
       todos
@@ -36,7 +42,11 @@ class App extends Component {
     return (
       <div className="App">
         <AddToDo addTodo={this.addToDo} />
-        <Todos todos={this.state.todos} deleteTodos={this.deleteToDo} />
+        <Todos
+          todos={this.state.todos}
+          deleteTodos={this.deleteToDo}
+          completeToDos={this.completeToDo}
+        />
       </div>
     );
   }

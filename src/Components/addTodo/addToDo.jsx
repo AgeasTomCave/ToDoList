@@ -4,6 +4,7 @@ import "./addToDo.scss";
 class AddToDo extends Component {
   state = {
     content: "",
+    complete: false,
     errors: []
   };
 
@@ -15,9 +16,6 @@ class AddToDo extends Component {
 
   handleSubmit = e => {
     e.preventDefault();
-    this.setState({
-      errors: []
-    });
     const errors = [];
     const newTodo = this.state.content;
 
@@ -30,7 +28,15 @@ class AddToDo extends Component {
       return;
     }
 
+    this.setState({
+      errors: []
+    });
+
     this.props.addTodo(this.state);
+
+    /**
+     * Reset the input to be empty
+     */
     this.setState({
       content: ""
     });
