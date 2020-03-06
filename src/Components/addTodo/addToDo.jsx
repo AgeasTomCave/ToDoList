@@ -44,14 +44,19 @@ class AddToDo extends Component {
 
   render() {
     return (
-      <form onSubmit={this.handleSubmit}>
+      <form className="c-add-form" onSubmit={this.handleSubmit}>
         <input
+          className="c-add-form__input"
           type="text"
           placeholder="Add a todo"
           onChange={this.handleChange}
           value={this.state.content}
         />
-        <button type="submit" value="Submit">
+        <button
+          className="c-add-form__button c-button--add"
+          type="submit"
+          value="Submit"
+        >
           Add
         </button>
         {this.state.errors.map(error => (

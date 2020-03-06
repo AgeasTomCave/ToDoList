@@ -7,10 +7,7 @@ import "./App.scss";
 
 class App extends Component {
   state = {
-    todos: [
-      { id: 'Buy food"', content: "Buy food", complete: false },
-      { id: "Buy beer", content: "Buy beer", complete: false }
-    ]
+    todos: []
   };
 
   deleteToDo = id => {

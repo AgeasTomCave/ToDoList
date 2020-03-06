@@ -7,13 +7,13 @@ const ToDos = ({ todos, editTodos, deleteTodos, completeToDos }) => {
       return (
         <div className="c-todo__item" key={todo.id}>
           <p className={`c-complete--${todo.complete}`}>{todo.content}</p>
-          <button
+          {/* <button
             onClick={() => {
               editTodos(todo.id);
             }}
           >
             Edit
-          </button>
+          </button> */}
           <button
             onClick={() => {
               deleteTodos(todo.id);

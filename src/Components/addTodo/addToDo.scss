@@ -6,3 +6,32 @@
   color: $t-red;
   padding: 10px;
 }
+
+.c-add-form {
+  &__input {
+    border: none;
+    background: white;
+    padding: 10px;
+
+    &:focus {
+      outline: none;
+    }
+  }
+}
+
+.c-button {
+  &--add {
+    background: $t-white;
+    color: $t-black;
+    border: none;
+    padding: 10px;
+
+    &:hover {
+      cursor: pointer;
+    }
+
+    &:focus {
+      outline: none;
+    }
+  }
+}
