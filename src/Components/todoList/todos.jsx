@@ -1,4 +1,5 @@
 import React from "react";
+import "./todo.scss";
 
 const ToDos = ({ todos, deleteTodos, completeToDos }) => {
   const todoList = todos.length ? (
