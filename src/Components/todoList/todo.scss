@@ -1,5 +1,85 @@
+@import "../../App.scss";
+
 .c-complete {
   &--true {
     text-decoration: line-through;
+    color: $t-black;
+  }
+}
+
+.c-button {
+  &--remove {
+    border: none;
+    font-weight: bold;
+    background: $t-white;
+  }
+}
+
+.c-todo {
+  &__item {
+    display: flex;
+    padding-bottom: 2px;
+    border-bottom: solid 5px $t-white;
+  }
+
+  &__label {
+    margin: 0;
+    width: 300px;
+    padding: 3px 10px;
+    color: $t-white;
+    font-size: 22px;
+  }
+}
+
+.c-container {
+  display: block;
+  position: relative;
+  padding-left: 35px;
+  cursor: pointer;
+  font-size: 22px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  margin-left: 10px;
+
+  input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+  }
+
+  input:checked ~ .c-checkmark:after {
+    display: block;
+  }
+
+  .c-checkmark:after {
+    left: 9px;
+    top: 5px;
+    width: 5px;
+    height: 10px;
+    border: solid $t-white;
+    border-width: 0 3px 3px 0;
+    -webkit-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    transform: rotate(45deg);
+  }
+}
+
+.c-checkmark {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 25px;
+  width: 25px;
+  background-color: $t-blue;
+  border: solid 5px $t-white;
+
+  &:after {
+    content: "";
+    position: absolute;
+    display: none;
   }
 }

@@ -6,9 +6,12 @@ import Heading from "./Components/heading/heading.jsx";
 import "./App.scss";
 
 class App extends Component {
-  state = {
-    todos: []
-  };
+  constructor(props) {
+    super(props);
+    this.state = {
+      todos: []
+    };
+  }
 
   deleteToDo = id => {
     const todos = this.state.todos.filter(todo => {
@@ -35,12 +38,10 @@ class App extends Component {
   };
 
   render() {
-    const currentTodos = this.state.todos;
-    console.log(currentTodos);
     return (
       <div className="App">
         <Heading />
-        <AddToDo addTodo={this.addToDo} />
+        <AddToDo addTodo={this.addToDo} previousTodos={this.state.todos} />
         <Todos
           todos={this.state.todos}
           deleteTodos={this.deleteToDo}

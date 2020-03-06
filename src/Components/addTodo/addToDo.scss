@@ -8,10 +8,13 @@
 }
 
 .c-add-form {
+  margin-bottom: 25px;
+
   &__input {
     border: none;
     background: white;
     padding: 10px;
+    width: 350px;
 
     &:focus {
       outline: none;
@@ -25,6 +28,8 @@
     color: $t-black;
     border: none;
     padding: 10px;
+    font-weight: bold;
+    width: 50px;
 
     &:hover {
       cursor: pointer;

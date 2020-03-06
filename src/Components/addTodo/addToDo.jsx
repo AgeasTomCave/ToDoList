@@ -2,11 +2,15 @@ import React, { Component } from "react";
 import "./addToDo.scss";
 
 class AddToDo extends Component {
-  state = {
-    content: "",
-    complete: false,
-    errors: []
-  };
+  constructor(props) {
+    super(props);
+    this.state = {
+      content: "",
+      complete: false,
+      errors: [],
+      currentTodos: []
+    };
+  }
 
   handleChange = e => {
     this.setState({
@@ -34,9 +38,6 @@ class AddToDo extends Component {
 
     this.props.addTodo(this.state);
 
-    /**
-     * Reset the input to be empty
-     */
     this.setState({
       content: ""
     });
