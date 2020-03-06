@@ -22,7 +22,7 @@ class AddToDo extends Component {
     const newTodo = this.state.content;
 
     if (newTodo === "") {
-      errors.push("Value can't be empty");
+      errors.push("Please enter a value");
     }
 
     if (errors.length > 0) {
