@@ -45,9 +45,9 @@ class AddToDo extends Component {
   render() {
     return (
       <form onSubmit={this.handleSubmit}>
-        <label>Add a new todo:</label>
         <input
           type="text"
+          placeholder="Add a todo"
           onChange={this.handleChange}
           value={this.state.content}
         />
@@ -55,7 +55,9 @@ class AddToDo extends Component {
           Add
         </button>
         {this.state.errors.map(error => (
-          <p key={error}>Error: {error}</p>
+          <p className="c-error" key={error}>
+            {error}
+          </p>
         ))}
       </form>
     );

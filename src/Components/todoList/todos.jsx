@@ -1,7 +1,7 @@
 import React from "react";
 import "./todo.scss";
 
-const ToDos = ({ todos, deleteTodos, completeToDos }) => {
+const ToDos = ({ todos, editTodos, deleteTodos, completeToDos }) => {
   const todoList = todos.length ? (
     todos.map(todo => {
       return (
@@ -9,10 +9,17 @@ const ToDos = ({ todos, deleteTodos, completeToDos }) => {
           <p className={`c-complete--${todo.complete}`}>{todo.content}</p>
           <button
             onClick={() => {
+              editTodos(todo.id);
+            }}
+          >
+            Edit
+          </button>
+          <button
+            onClick={() => {
               deleteTodos(todo.id);
             }}
           >
-            Delete todo
+            Remove
           </button>
           <input
             type="checkbox"

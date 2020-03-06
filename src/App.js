@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import Todos from "./Components/todoList/todos.jsx";
 import AddToDo from "./Components/addTodo/addToDo.jsx";
+import Heading from "./Components/heading/heading.jsx";
 
 import "./App.scss";
 
@@ -41,6 +42,7 @@ class App extends Component {
     console.log(currentTodos);
     return (
       <div className="App">
+        <Heading />
         <AddToDo addTodo={this.addToDo} />
         <Todos
           todos={this.state.todos}

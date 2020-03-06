@@ -1,0 +1,8 @@
+@import "../../app.scss";
+
+.c-error {
+  border: solid 1px $t-red;
+  background: $t-red--light;
+  color: $t-red;
+  padding: 10px;
+}
